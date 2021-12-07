@@ -1,0 +1,93 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #5f2c82, #49a09d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+} 
+
+.analogniSat {
+    width: 440px;
+    height: 440px;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 50%;
+    border: 4px solid black;
+    position: relative;
+}
+
+.analogniSat .broj {
+    --pozicijaBroja: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--pozicijaBroja));
+    font-size: 2.2rem;
+}
+
+.analogniSat .brojTomorrow {
+    font-size: 1.1rem;
+}
+
+.analogniSat .broj1 { --pozicijaBroja: 30deg; }
+.analogniSat .broj2 { --pozicijaBroja: 60deg; }
+.analogniSat .broj3 { --pozicijaBroja: 90deg; }
+.analogniSat .broj4 { --pozicijaBroja: 120deg; }
+.analogniSat .broj5 { --pozicijaBroja: 150deg; }
+.analogniSat .broj6 { --pozicijaBroja: 180deg; }
+.analogniSat .broj7 { --pozicijaBroja: 210deg; }
+.analogniSat .broj8 { --pozicijaBroja: 240deg; }
+.analogniSat .broj9 { --pozicijaBroja: 270deg; }
+.analogniSat .broj10 { --pozicijaBroja: 300deg; }
+.analogniSat .broj11 { --pozicijaBroja: 330deg; }
+
+.analogniSat .kazaljka {
+    --rotacijaKazaljke: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotacijaKazaljke) * 1deg));
+}
+
+.analogniSat::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+} 
+
+.analogniSat .kazaljka.sat {
+    width: 12px;
+    height: 30%;
+    background-color: black;
+}
+
+.analogniSat .kazaljka.min {
+    width: 8px;
+    height: 35%;
+    background-color: black;
+}
+
+.analogniSat .kazaljka.sec {
+    width: 4px;
+    height: 40%;
+    background-color: red;
+}
